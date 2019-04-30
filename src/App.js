@@ -7,7 +7,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Hello Home</h1>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>

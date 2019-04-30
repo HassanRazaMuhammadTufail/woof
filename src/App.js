@@ -6,7 +6,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <SiderDemo />
+        {/* <SiderDemo /> */}
         <h1>Hello Home</h1>
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}

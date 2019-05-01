@@ -5,18 +5,22 @@ import Button from "../../Components/Button";
 import Logout from "../../Components/Logout";
 import fire from "../../config/firebaseConfig";
 import SearchBar from "../../Components/Search";
+
 const db = fire.firestore();
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
+
 class SiderDemo extends React.Component {
   state = {
     username: null,
     collapsed: false
   };
+
   onCollapse = collapsed => {
     console.log(collapsed);
     this.setState({ collapsed });
   };
+
   getCurrentUserData = () => {
     fire.auth().onAuthStateChanged(user => {
       if (user) {
@@ -42,6 +46,7 @@ class SiderDemo extends React.Component {
       }
     });
   };
+
   checkUserVisibility() {
     fire.auth().onAuthStateChanged(user => {
       if (user) {
@@ -51,10 +56,12 @@ class SiderDemo extends React.Component {
       }
     });
   }
+
   componentDidMount() {
     this.getCurrentUserData();
     this.checkUserVisibility();
   }
+
   render() {
     console.log(this.props.getpropsFromHistory);
     return (
@@ -111,10 +118,11 @@ class SiderDemo extends React.Component {
               </div>
             </div>
           </Header>
-          <Content style={{ margin: "0 16px" }}>
+          <Content className='' style={{ margin: "0 16px" }}>
             <div
               style={{ marginTop: 20, background: "#fff", height: "100vh" }}
             />
+            <div></div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
             <div className="footer-div1">

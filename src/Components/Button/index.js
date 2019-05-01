@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+// import "./index.css";
 import { Button, Icon } from "antd";
 
 class ButtonSize extends React.Component {

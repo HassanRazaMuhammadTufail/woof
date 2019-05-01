@@ -5,6 +5,8 @@ import fire from "../../config/firebaseConfig";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
 
+const db = fire.firestore();
+
 class SignUpForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
@@ -14,8 +16,14 @@ class SignUpForm extends React.Component {
           .auth()
           .createUserWithEmailAndPassword(values.email, values.password)
           .then(res => {
-            this.props.history.push('/');
-            // console.log(res);
+            db.collection('users').doc(res.user.uid).set({username:values.userName,email:values.email})
+              .then((res)=> {
+                console.log(res);
+                this.props.history.push("/");
+              })
+              .catch((error)=> {
+                return swal("Error!", error.message, "error");
+              });
           })
           .catch(error => swal("Error!", error.message, "error"));
       }

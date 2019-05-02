@@ -5,6 +5,7 @@ import Button from "../../Components/Button";
 import Logout from "../../Components/Logout";
 import fire from "../../config/firebaseConfig";
 import SearchBar from "../../Components/Search";
+import UploadButton from "../../Components/Upload"
 
 const db = fire.firestore();
 const { Header, Content, Footer, Sider } = Layout;
@@ -89,10 +90,9 @@ class SiderDemo extends React.Component {
               <span>Camera</span>
             </Menu.Item>
             <Menu.Item key="4">
-              <Icon type="file" />
-              <span>File</span>
+            <UploadButton />
             </Menu.Item>
-            <SubMenu
+            {/* <SubMenu
               key="sub1"
               title={
                 <span>
@@ -103,7 +103,7 @@ class SiderDemo extends React.Component {
             >
               <Menu.Item key="5">Team 1</Menu.Item>
               <Menu.Item key="6">Team 2</Menu.Item>
-            </SubMenu>
+            </SubMenu> */}
           </Menu>
         </Sider>
         <Layout>
